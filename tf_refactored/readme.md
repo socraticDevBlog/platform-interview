@@ -11,7 +11,8 @@ tfvars files is the way to go for this exercise.
 
 ```bash
 terraform init
-terraform plan -var-file=terraform.tfvars
+terraform plan -var-file=terraform.tfvars -out=terraform.plan
+terraform apply "teraform.plan"
 ```
 
 * I assume some remote state file management is being taken care off
