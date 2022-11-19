@@ -14,4 +14,4 @@ terraform init
 terraform plan -var-file=terraform.tfvars
 ```
 
-* I assume some remote state file management is taking care off
+* I assume some remote state file management is being taken care off
