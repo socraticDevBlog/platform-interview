@@ -4,8 +4,7 @@
 
 ### not using Terraform Workspace
 I chose not to use _terraform workspace_ to isolate various environments. Since
-we deal with various credentials, I think using autonomous tfstate files and
-tfvars files is the way to go for this exercise.
+we deal with various credentials, I think using autonomous tfstate files 
 
 ### commands ran by automated deployment pipeline*
 
