@@ -3,8 +3,7 @@
 ## choices made
 
 ### not using Terraform Workspace
-I chose not to use _terraform workspace_ to isolate various environments. Since
-we deal with various credentials, I think using autonomous tfstate files 
+I chose not to use _terraform workspace_ to isolate various environments.
 
 ### commands ran by automated deployment pipeline*
 
