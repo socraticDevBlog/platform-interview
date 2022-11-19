@@ -1,3 +1,14 @@
+vault_provider_conf = {
+  "non-production" = {
+    port  = "8201"
+    token = "f23612cf-824d-4206-9e94-e31a6dc8ee8d"
+  }
+  "production" = {
+    port  = "8301"
+    token = "083672fc-4471-4ec4-9b59-a285e463a973"
+  }
+}
+
 svc_vault_configs_dev = {
   "account" = {
     db = {

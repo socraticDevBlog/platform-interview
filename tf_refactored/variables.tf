@@ -1,3 +1,11 @@
+variable "vault_provider_conf" {
+  type = map(object({
+    port  = string
+    token = string
+  }))
+  description = "values to configure Vault Terraform provider"
+}
+
 variable "svc_vault_configs_dev" {
   type = map(object({
     svc_name = string

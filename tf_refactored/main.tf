@@ -13,18 +13,11 @@ terraform {
   }
 }
 
-locals {
-  non_prod_port  = "8201"
-  prod_port      = "8301"
-  non_prod_token = "f23612cf-824d-4206-9e94-e31a6dc8ee8d"
-  prod_token     = "083672fc-4471-4ec4-9b59-a285e463a973"
-}
-
 module "infra_development" {
   source = "./infra_module"
   vault_provider = {
-    address = "http://localhost:${local.non_prod_port}"
-    token   = local.non_prod_token
+    address = "http://localhost:${var.vault_provider_conf["non-production"].port}"
+    token   = var.vault_provider_conf["non-production"].token
   }
   env                        = "development"
   svc_vault_configs          = var.svc_vault_configs_dev
@@ -34,8 +27,8 @@ module "infra_development" {
 module "infra_staging" {
   source = "./infra_module"
   vault_provider = {
-    address = "http://localhost:${local.non_prod_port}"
-    token   = local.non_prod_token
+    address = "http://localhost:${var.vault_provider_conf["non-production"].port}"
+    token   = var.vault_provider_conf["non-production"].token
   }
   env                        = "staging"
   svc_vault_configs          = var.svc_vault_configs_staging
@@ -46,8 +39,8 @@ module "infra_staging" {
 module "infra_production" {
   source = "./infra_module"
   vault_provider = {
-    address = "http://localhost:${local.prod_port}"
-    token   = local.prod_token
+    address = "http://localhost:${var.vault_provider_conf["production"].port}"
+    token   = var.vault_provider_conf["production"].token
   }
   env                        = "production"
   svc_vault_configs          = var.svc_vault_configs_production
